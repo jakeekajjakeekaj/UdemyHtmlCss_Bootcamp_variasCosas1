@@ -1,0 +1,374 @@
+body{
+    background-color: aqua;
+    color: black;
+}
+    h3{
+        padding: 10px;
+        display: flex;
+        color: red;
+        background-color: black;
+        text-align: left;
+    }
+    .imagenFondo{
+        padding: 30px;
+        text-align: center;
+        color: gold;
+        margin: -8px;
+        display: block;
+        background-image: url("images/Imagen_fondo.jpg");
+    }
+    hr.style1{
+        border-top: 10px solid black;
+        border-left: 100px solid purple;
+        border-bottom: 10px solid black;
+        border-right: 100px solid purple;
+    }
+    hr.style2{
+        margin-top: 60px;
+        border-top: 10px solid gray;
+    }
+    .imagenFlecha{
+        width: 50px;
+    }
+    .derecha{
+        transform: rotate(90deg)
+    }
+    .abajo{
+        transform: rotate(180deg)
+    }
+    .izquierda{
+        transform: rotate(270deg)
+    }
+    .uppercase{
+        text-transform: uppercase;
+    }
+    .box1{
+        border: 4px solid black;
+    }
+    #box2{
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 5px auto;
+        background-color: rgba(0, 0, 0, 0.78);
+        color: red;
+        text-align: center;
+        padding: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+    .floating-image{
+        float: right;
+        margin: 10px;
+        border: 1px solid black;
+        box-shadow: 0 0 5px black;
+    }
+    .text-shadow{
+        background-color: black;
+        font-size: 40px;
+        text-shadow: 2px 2px 5px red;
+        color: rgba(0, 0, 0, 0);
+    }
+    .box-model{
+        border: 5px solid red;
+        height: 300px;
+        width: 300px;
+        padding: 30px;
+        /* border box es el perimetro indicado, lo que se indica será el tamaño de la caja, mientras que content-box es el tamaño indicado de la caja, lo que provoca que borer-box suela ser mas pequeño que content-box */
+        box-sizing: border-box;
+        /* el outline basicamente se basa en el borde del borde */
+        outline: 5px solid black;
+        /* en este caso el outline offset marca la distancia del outline con el borde */
+        outline-offset: 10px;
+        /* en este caso el margin indica la distancia con los limites de la pagina para que así no se "coma" al outline */
+        margin: 30px;
+    }
+    #box-fondo{
+        background-color: gold;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 70px;
+    }
+    #box-no-fondo{
+        background-color: orangered;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        transform: perspective(400px) rotateY(45deg);
+    }
+    .box-forzada{
+        border: 4px solid blue;
+        display: inline-block;
+        /* Tamaño minimo de caja */
+        min-width: 450px;
+        /* Tamaño maximo de caja */
+        max-width: 500px;
+        box-sizing: border-box;
+    }
+    .box-no-forzada{
+        border: 4px solid gold;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .box-relative-positioning{
+        display: block;
+        width: 300px;
+        height: 300px;
+        border: 10px solid black;
+        /* El relative sirve para mover algo de una manera sencilla, sin utilizar padding o ese tipo de cosas */
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+    .box-absolute-positioning{
+        /* A diferencia del relative, es que aquí varía dependiendo de dónde se está trabajando, es decir: si se encuentra dentro de un relative, las medidas se tomarán en cuenta dentro del reltive, pero si se encuentra suelto, así como el relative está, las medidas se tomarían en cuenta conforme a la entera página */
+        position: absolute;
+        border: 3px solid blue;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+    }
+    .box-fix-positioning{
+        background-color: #f5f5f5;
+        border-bottom: 2px solid #ccc;
+        padding: 1px;
+        /* En este caso siempre se queda la caja en la sección indicada */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 13%;
+    }
+    .box-sticky-positioning{
+        /* A diferencia de fixed, en este caso se queda donde el div padre lo haya mandado a llamar */
+        position: sticky;
+        background-color: #f5f5f5;
+        border-bottom: 2px solid #ccc;
+        padding: 6px;
+        top: 0;
+        left: 0;
+        width: 5%;
+    }
+    .box-overflow{
+        width: 300px;
+        height: 300px;
+        border: 5px solid black;
+        overflow: auto;
+        /* margin-left: auto;
+        margin-right: auto; */
+        /* Para margin, el primer valor (auto), equivale a top y bottom, mientras que el segundo equivale a left y right */
+        margin: auto auto;
+    }
+    #parent-id > .parent-box{
+        height: 20px;
+        border: 1px solid blue;
+        background-color: gold;
+    }
+    #parent-id .parent-box + .parent-box{
+        background-color: red;
+    }
+    #parent-selector > .box-selectors{
+        height: 20px;
+        border: 1px solid blue;
+        color: white;
+    }
+    /* Aquí no se selecciona aquél que tenga la clase .dontselectme, es decir que no se verá afectado por lo primero dicho y seguirá las reglas que se le atribuyan al mismo */
+    .box-selectors:not(.dontselectme){
+        background-color: blue;
+    }
+    /* Aquí es como el de arriba, pero se contará al 5 hijo para así poder hacer uso de las reglas */
+    .box-selectors:nth-child(5){
+        background-color: purple;
+    }
+    /* Aquí al pasar el mouse por encima, se seguirán las reglas indicadas */
+    .box-selectors:hover{
+        background-color: gray;
+    }
+    .uppercase{
+        text-transform: uppercase;
+    }
+    .palbefore{
+        text-decoration: none;
+        color: black;
+        position: relative;
+    }
+    /* El uso del before es con la intención de crear childs con el principal objetivo del diseño */
+    .palbefore::before{
+        content: ' ';
+        width: 100%;
+        height: 4px;
+        background-color: gold;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    /* APLICACION DE UN HOVER */
+    .palbefore:hover::before{
+        height: 19px;
+    }
+    /* Cambia la primera letra del texto */
+    .firstletter::first-letter{
+        font-size: 31px;
+        float: left;
+        margin: 5px;
+    }
+    /* CAMBIA LA PRIMERA LINEA DE FORMA RESPONSIVA */
+    .firstletter::first-line{
+        font-weight: bold;
+    }
+    /* PERMITE CAMBIAR EL COLOR AL SELECCIONAR EL TEXTO */
+    .firstletter::selection{
+        background-color: green;
+        color: white;
+    }
+    .transition1{
+        background-color: #fff;
+        display: inline-block;
+        padding: 5px 15px;
+        color: #000;
+        text-decoration: none;
+        border: 1px solid black;
+        /* transition: all 2.2s; */
+        transition: background-color 2.2s, color 5s, padding 1s;
+    }
+    .transition1:hover{
+        background-color: #000;
+        color: #fff;
+        /* Lo de abajo se puede comentar debido a que es un ejemplo de otras cosas que se pueden hacer, en este caso se incrementa el tamaño */
+        padding: 10px 30px;
+    }
+    .gradient1{
+        /* lo de abajo provocrá un degradado de izquierda a derecha */
+                                       /* direction, color1, color2 */
+        /* background-image: linear-gradient(to right, black, yellow); */
+        /* Lo de abajo, por el ángulo provocará un degradado de esquina izquierda a esquina derecha */
+        background-image: linear-gradient(45deg, black, yellow);
+        /* MUCHAS VECES ES DIFICIL TANTEAR LA GRADINTE, POR LO QUE EN GOOGLE NOS DIRIGIMOS A CSS GRADIENT GENERATOR (cssgradient.io) PAR OBTENER LA GRADIANTE QUE QUERAMOS */
+
+        height: 500px;
+        width: 100%;
+    }
+  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+    .custom-web-font{
+        font-family: 'Delicious Handrawn', cursive;
+        font-size: 30px;
+    }
+    .transformation-box1{
+        width: 300px;
+        height: 300px;
+        border: 10px solid black;
+        margin: 50px auto;
+
+        /* Lo de abajo traslada a la box */
+                            /* x , y */
+        /* transform: translate(100px,100px); */
+        /* Lo de abajo rota a la box */
+        /* transform: rotate(45deg); */
+        /* Lo de bajo escala a la box */
+        /* transform: scale(1.3); */
+        /* Lo de abajo transforma la perspectiva de la box */
+        /* transform: skew(20deg,20deg); */
+        /* transform: skewX(20deg); */
+        transform: skewY(20deg);
+    }
+    .box-animated1{
+        width: 300px;
+        height: 300px;
+        border: 10px solid black;
+        border-radius: 50%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        animation-name: slideMe1;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes slideMe1{
+        from{
+            top: 0;
+            left: 0;
+        }
+        to{
+            left: 100%;
+        }
+    }
+    .box-animated2{
+        /* margin: 100px 100px; */
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation-name: slideMe2;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        /* Lo de abajo es pra que el ciclo sea en reversa */
+        animation-direction: alternate;
+    }
+    @keyframes slideMe2{
+        0%{
+            /* Recuerda que al mencionar top y left, nos referimos al op y left de la figura en si */
+            top: 0%;
+            left: 0%;
+        }
+        25%{
+            background-color: gold;
+            top: 0%;
+            left: 89%;
+        }
+        50%{
+            background-color: purple;
+            top: 60%;
+            left: 89%;
+        }
+        75%{
+            background-color: red;
+            top: 60%;
+            left: 0%;
+        }
+        100%{
+            top: 0%;
+            left: 0%;
+        }
+    }
+    .box-sencilla{
+        /* margin: 100px 100px; */
+        display: block;
+        width: 80%;
+        height: 300px;
+        /* border: 4px solid black; */
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    #container{
+        display: flex;
+        /* Lo de abajo indica que si hay algo mas que pase el 100% en la pagina se apilará */
+        flex-wrap: wrap;
+    }
+    #container div{
+        border: 1px solid red;
+        /* Lo de abajo toma el 48% de la pagina */
+        /* flex-basis: 48%; */
+        /* Si no se tiene lo de abajo, las medidas no se respetan, si ponemos una medida de 50% y 80%, sin el flex shrink y grow, las medidas no saldrían de forma exacta ya que se recortarían */
+        /* flex-shrink: 0; */
+        /* flex-grow: 0; */
+    }
+    /* #container div.right{
+        flex-basis: 48%;
+    } */
+    .navigation{
+        flex-basis: 5%;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+    .content{
+        flex-basis: 70%;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }

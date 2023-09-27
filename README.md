@@ -1,0 +1,1 @@
+Este solo es un ejemplo de varias cosas que se pueden hacer al ir experimentando con html y css, no significa que todo sea utilizado de la manera adecuada para llevarse a cabo, pero sirve como plantilla en caso de querer extraer codigo.
